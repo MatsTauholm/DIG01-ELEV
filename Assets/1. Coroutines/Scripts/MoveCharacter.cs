@@ -3,10 +3,8 @@ using System.Collections;
 
 public class MoveCharacter : MonoBehaviour
 {
-
     public IEnumerator Move(Vector3 targetPosition, float moveDuration)
     {
-        Debug.Log("Move started");
         Vector3 startPosition = transform.position;
         float timer = 0f;
 
@@ -17,7 +15,5 @@ public class MoveCharacter : MonoBehaviour
             transform.position = Vector3.Lerp(startPosition, targetPosition, t); // Interpolate between the start and target positions
             yield return null;
         }
-
-        //transform.position = targetPosition;
     }
 }
